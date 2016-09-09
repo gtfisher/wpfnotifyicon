@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Label x:Name="label" Content="Window from tray icon" HorizontalAlignment="Left" Margin="48,30,0,0" VerticalAlignment="Top" FontSize="14" Width="329"/>
+
     </Grid>
 </Window>

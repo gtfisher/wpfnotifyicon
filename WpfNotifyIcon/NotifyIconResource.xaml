@@ -3,9 +3,25 @@
                     xmlns:tb="http://www.hardcodet.net/taskbar"
                     xmlns:local="clr-namespace:WpfNotifyIcon">
 
+    <ContextMenu x:Shared="false" x:Key="SysTrayMenu">
+        <MenuItem Header="Show Window" Command="{Binding ShowWindowCommand}" />
+        <MenuItem Header="Hide Window" Command="{Binding HideWindowCommand}" />
+        <Separator />
+        <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" />
+    </ContextMenu>
+
     <!-- Globally declared notify icon -->
     <tb:TaskbarIcon x:Key="MyNotifyIcon"
                   IconSource="/Red.ico"
-                  ToolTipText="hello world" />
+                  ToolTipText="Double-click for window, right-click for menu" 
+                    DoubleClickCommand="{Binding ShowWindowCommand}"
+                    ContextMenu="{StaticResource SysTrayMenu}">
+
+        <!-- self-assign a data context (could also be done programmatically) -->
+        <tb:TaskbarIcon.DataContext>
+            <local:NotifyItemViewModel />
+        </tb:TaskbarIcon.DataContext>
+
+    </tb:TaskbarIcon>
 
 </ResourceDictionary>
