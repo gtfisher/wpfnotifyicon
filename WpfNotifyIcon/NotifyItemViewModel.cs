@@ -16,6 +16,28 @@ namespace WpfNotifyIcon
     ///   
     class NotifyItemViewModel
     {
+
+       
+
+        public ICommand ShowPopupCommand
+        {
+            get
+            {
+                return new DelegateCommand
+                {
+                    CanExecuteFunc = () =>true,
+                    CommandAction = () =>
+                    {
+                        UTMPopup utmPopup = new UTMPopup();
+                        utmPopup.IsOpen = true;
+                    }
+                };
+            }
+        }
+
+
+
+
         /// <summary>
         /// Shows a window, if none is already open.
         /// </summary>

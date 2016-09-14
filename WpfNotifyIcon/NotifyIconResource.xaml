@@ -4,11 +4,14 @@
                     xmlns:local="clr-namespace:WpfNotifyIcon">
 
     <ContextMenu x:Shared="false" x:Key="SysTrayMenu">
+        <MenuItem Header="Show Popup" Command="{Binding ShowPopupCommand}" />
         <MenuItem Header="Show Window" Command="{Binding ShowWindowCommand}" />
         <MenuItem Header="Hide Window" Command="{Binding HideWindowCommand}" />
         <Separator />
         <MenuItem Header="Exit" Command="{Binding ExitApplicationCommand}" />
     </ContextMenu>
+
+  
 
     <!-- Globally declared notify icon -->
     <tb:TaskbarIcon x:Key="MyNotifyIcon"
@@ -21,6 +24,7 @@
         <tb:TaskbarIcon.DataContext>
             <local:NotifyItemViewModel />
         </tb:TaskbarIcon.DataContext>
+      
 
     </tb:TaskbarIcon>
 

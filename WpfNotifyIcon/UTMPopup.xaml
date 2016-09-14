@@ -1,0 +1,49 @@
+﻿<Popup x:Class="WpfNotifyIcon.UTMPopup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfNotifyIcon"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+            Margin="10,10,0,13" Name="MyPopup" HorizontalAlignment="Left" 
+            Placement="Mouse" VerticalAlignment="Top" Width="400" IsOpen="False"
+            Height="Auto"
+            >
+    <StackPanel Background="White">
+        <TextBlock x:Name="PopupTextBlock" Background="LightBlue" FontSize="14" FontWeight="Bold" Text="GenerateUTM" />
+        <Label x:Name="label" Content="Source URL" HorizontalAlignment="Left" Background="White" />
+        <TextBox x:Name="urlTextBox" Height="24" Text=" "/>
+        <Button x:Name="generatetUTMButton" Content="Generate UTM" Click="generateUTM_Click" />
+        <Button x:Name="ignoreButton" Content="Ignore" Click="ignoreButton_Click" />
+        <StackPanel x:Name="utmStackPanel"  Visibility="Collapsed">
+            <Label x:Name="sourceLabel" Content="Source" Cursor="None" Background="White"/>
+            <ComboBox x:Name="sourceCombo"  SelectionChanged="sourceComboSelectionChanged" >
+                <ComboBoxItem></ComboBoxItem>
+                <ComboBoxItem>Direct</ComboBoxItem>
+                <ComboBoxItem>Email</ComboBoxItem>
+                <ComboBoxItem>facebook</ComboBoxItem>
+                <ComboBoxItem>twitter</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="mediumLabel" Content="Medium" Cursor="None" Background="White" />
+            <ComboBox x:Name="mediumCombo" SelectionChanged="mediumComboSelectionChanged" >
+                <ComboBoxItem>Email</ComboBoxItem>
+                <ComboBoxItem>Display</ComboBoxItem>
+                <ComboBoxItem>Social</ComboBoxItem>
+                <ComboBoxItem>Offline</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="campaignLabel" Content="Campaign" Cursor="None" Background="White" />
+            <ComboBox x:Name="campaignCombo"  SelectionChanged="campaignComboSelectionChanged">
+                <ComboBoxItem>Summer Promo</ComboBoxItem>
+                <ComboBoxItem>Back to School</ComboBoxItem>
+                <ComboBoxItem>Email Signature</ComboBoxItem>
+                <ComboBoxItem>Autumn Collection</ComboBoxItem>
+            </ComboBox>
+            <Label x:Name="utmLabel" Content="UTM URL" Cursor="None" Background="White" />
+            <TextBox x:Name="utmUrlTextBox" Height="24" Text=" "/>
+        </StackPanel>
+
+
+    </StackPanel>
+   
+</Popup>
